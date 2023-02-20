@@ -1,7 +1,7 @@
 name: Deploy Frontend application
 'on':
   push
-    branch:
+    branches:
       - main
 jobs:
   docker:
