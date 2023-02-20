@@ -1,6 +1,6 @@
 name: Deploy Frontend application
 'on':
-  push
+  push:
     branches:
       - main
 jobs:
