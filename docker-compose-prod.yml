@@ -1,6 +1,1 @@
-version: '3.3'
-services: 
-  frontend:
-    image: dr1w/234-deploylab-frontend:latest
-    ports:
-      - "9999:80"
+docker-compose -f docker-compose-prod.yml up -d
