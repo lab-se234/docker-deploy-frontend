@@ -7,6 +7,7 @@ name: Deploy frontend application
     branches:
 
       - main
+      - 4.9
 
 jobs:
 
