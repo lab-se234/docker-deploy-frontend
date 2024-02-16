@@ -6,8 +6,7 @@ name: Deploy frontend application
 
     branches:
 
-      - main
-
+      - prod
 
 jobs:
 
@@ -85,9 +84,9 @@ jobs:
 
           port: 22
 
-          source: "docker-compose.yml"
+          source: "docker-compose-prod.yml"
 
-          target: "/home/ubuntu/frontend"
+          target: "/home/ubuntu/frontend2"
 
       -
 
@@ -107,7 +106,7 @@ jobs:
 
           script: |
 
-            cd /home/ubuntu/frontend
+            cd /home/ubuntu/frontend2
 
             echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
 
@@ -115,6 +114,6 @@ jobs:
 
             docker compose pull
 
-            docker compose up -d
+            docker-compose -f docker-compose-prod.yml up -d
 
-            rm -rf /home/ubuntu/frontend
+            rm -rf /home/ubuntu/frontend2
